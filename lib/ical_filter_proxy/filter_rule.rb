@@ -19,6 +19,8 @@ module IcalFilterProxy
     private
 
     def evaluate(event_data, value)
+      return false if event_data.nil?
+      
       if value.is_a? Array
         value.reduce(false) { |r, v| r |= evaluate(event_data, v) }
       else
