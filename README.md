@@ -14,28 +14,24 @@ In addition, display alarms can be created or cleared.
 
 ```yaml
 my_calendar_name:
-   ical_url: https://source-calendar.com/my_calendar.ics # Source calendar
+   ical_url: webcal://events.nyu.edu/live/ical/events/header/All%20Events # Source calendar
    api_key: myapikey # (optional) append ?key=myapikey to your URL to grant access
-   timezone: Europe/London # (optional) ensure all time comparisons are done in this TZ
+   timezone: New York # (optional) ensure all time comparisons are done in this TZ
    rules:
-      - field: start_time # start_time and end_time supported
-        operator: not-equals # equals and not-equals supported
-        val: "09:00" # A time in 24hour format, zero-padded
-      - field: summary # summary and description supported
-        operator: startswith # (not-)startswith, (not-)equals and (not-)includes supported
-        val: # array of values also supported
-          - Planning
-          - Daily Standup
-      - field: summary # summary and description supported
-        operator: matches # match against regex pattern
-        val: # array of values also supported
-          - '/Team A/i'
+      - field: start_time
+      operator: equals
+      val: '08:00'
+      - field: summary
+      operator: not-includes
+      val: ['Sports', 'Shabbat', 'Bible', 'Sacred', 'Sorority', 'Jummah']
+      - field: location
+      operator: not-includes
+      val: ['Florence']
    alarms: # (optional) create/clear alarms for filtered events
      clear_existing: true # (optional) if true, existing alarms will be removed, default: false 
-     triggers: # (optional) triggers for new alarms. Description will be the alarm summary, action is 'DISPLAY'
-       - '-P1DT0H0M0S' # iso8061 supported
-       - 2 days # supports full day[s], hour[s], minute[s], no combination in one trigger
 ```
+
+
 
 ### Variable substitution
 
