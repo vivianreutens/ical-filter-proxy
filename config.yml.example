@@ -1,10 +1,10 @@
 rota:
-  ical_url: https://url-to-calendar.ical
+  ical_url: webcal://events.nyu.edu/live/ical/events/header/All%20Events
   api_key: abc12
   rules:
     - field: start_time
       operator: equals
-      val: '09:00'
+      val: '08:00'
   alarms:
     clear_existing: true
     triggers:
