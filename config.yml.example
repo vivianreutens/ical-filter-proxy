@@ -5,8 +5,12 @@ rota:
     - field: start_time
       operator: equals
       val: '08:00'
+    -field: summary
+     operator: not-includes
+     val:['Sports', 'Shabbat', 'Bible', 'Sacred', 'Sorority', 'Jummah']
+    -field: location
+     operator: not-includes
+     val: ['Florence']
+      
   alarms:
     clear_existing: true
-    triggers:
-      - '-P1DT0H0M0S'
-      - '-P1DT1H1M2S'
