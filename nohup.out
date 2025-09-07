@@ -1,0 +1,4 @@
+Calling `DidYouMean::SPELL_CHECKERS.merge!(error_name => spell_checker)' has been deprecated. Please call `DidYouMean.correct_error(error_name, spell_checker)' instead.
+[2025-09-05 10:41:45] INFO  WEBrick 1.8.2
+[2025-09-05 10:41:45] INFO  ruby 3.2.4 (2024-04-23) [arm64-darwin23]
+[2025-09-05 10:41:45] INFO  WEBrick::HTTPServer#start: pid=54874 port=8000
